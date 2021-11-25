@@ -47,7 +47,7 @@ public class ExpenseService {
 
     private void addExpenseByEqualSplit(String userId, List<String> userIds, double amount){
         double splitAmount = (amount)/userIds.size();
-        splitAmount = Math.round(splitAmount*100)/100;
+        splitAmount = Math.round(splitAmount*100)/100.0;
         for (String user: userIds){
             amount-=splitAmount;
             if(!balanceMap.containsKey(userId)){
@@ -79,8 +79,8 @@ public class ExpenseService {
     private void addExpenseByPercentSplit(String userId, List<String> userIds, double amount, List<Double> splits){
         double cumAmount=0.0;
         for (int i=0;i<splits.size();i++){
-            double splitAmount = amount*splits.get(i)/100;
-            splitAmount = Math.round(splitAmount*100)/100;
+            double splitAmount = amount*splits.get(i)/100.0;
+            splitAmount = Math.round(splitAmount*100)/100.0;
             cumAmount+=splitAmount;
             if(!balanceMap.containsKey(userId)){
                 balanceMap.put(userId, new HashMap<>());
@@ -92,6 +92,7 @@ public class ExpenseService {
             balanceMap.get(userIds.get(i)).put(userId, balanceMap.get(userIds.get(i)).getOrDefault(userId, 0.0)+(-1*splitAmount));
         }
         amount-=cumAmount;
+        amount=Math.round(amount*100)/100.0;
         balanceMap.get(userId).put(userIds.get(0),
                 balanceMap.get(userId).get(userIds.get(0))+amount);
         balanceMap.get(userIds.get(0)).put(userId,

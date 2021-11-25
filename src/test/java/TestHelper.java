@@ -28,15 +28,19 @@ public class TestHelper {
 
     @Test
     void testFunction(){
+//        System.out.println(driverService.getAllBalances());
+//        System.out.println(driverService.getBalanceForUserId("u1"));
+//        driverService.addExpense("u1", 1000, Arrays.asList("u1","u2","u3","u4"), ExpenseType.EQUAL, new ArrayList<>());
+//        System.out.println(driverService.getBalanceForUserId("u4"));
+//        System.out.println(driverService.getBalanceForUserId("u1"));
+//        driverService.addExpense("u1", 1250, Arrays.asList("u2", "u3"), ExpenseType.EXACT, Arrays.asList(370.0, 880.0));
+//        System.out.println(driverService.getAllBalances());
+//        driverService.addExpense("u4", 1200, Arrays.asList("u1","u2","u3","u4"), ExpenseType.PERCENT, Arrays.asList(40.0,20.0,20.0,20.0));
+//        System.out.println(driverService.getBalanceForUserId("u1"));
+//        System.out.println(driverService.getAllBalances());
+        driverService.addExpense("u1", 1528.132, Arrays.asList("u2","u3"),
+                ExpenseType.PERCENT, Arrays.asList(45.4, 54.6));
         System.out.println(driverService.getAllBalances());
-        System.out.println(driverService.getBalanceForUserId("u1"));
-        driverService.addExpense("u1", 1000, Arrays.asList("u1","u2","u3","u4"), ExpenseType.EQUAL, new ArrayList<>());
-        System.out.println(driverService.getBalanceForUserId("u4"));
-        System.out.println(driverService.getBalanceForUserId("u1"));
-        driverService.addExpense("u1", 1250, Arrays.asList("u2", "u3"), ExpenseType.EXACT, Arrays.asList(370.0, 880.0));
-        System.out.println(driverService.getAllBalances());
-        driverService.addExpense("u4", 1200, Arrays.asList("u1","u2","u3","u4"), ExpenseType.PERCENT, Arrays.asList(40.0,20.0,20.0,20.0));
-        System.out.println(driverService.getBalanceForUserId("u1"));
-        System.out.println(driverService.getAllBalances());
+//        System.out.println(driverService.getBalanceForUserId("u1"));
     }
 }
